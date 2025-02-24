@@ -51,17 +51,15 @@ import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import "@/app/globals.css";
 import NavBar from "./Navbar";
-import { ThemeProvider } from "@/context/ThemeContext";
+// import { ThemeProvider } from "@/context/ThemeContext";
 
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <ThemeProvider>
-        {" "}
-        {/* Wrap everything inside ThemeProvider */}
-        <NavBar />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      {/* <ThemeProvider> */} {/* Wrap everything inside ThemeProvider */}
+      <NavBar />
+      <Component {...pageProps} />
+      {/* </ThemeProvider> */}
     </SessionProvider>
   );
 }
